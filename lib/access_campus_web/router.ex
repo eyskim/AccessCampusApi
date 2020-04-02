@@ -2,7 +2,8 @@ defmodule AccessCampusWeb.Router do
   use AccessCampusWeb, :router
 
   pipeline :browser do
-    plug :accepts, ["html"]
+    plug CORSPlug, origin: "*"
+    plug :accepts, ["html", "json"]
     plug :fetch_session
     plug :fetch_flash
     plug :protect_from_forgery
@@ -10,7 +11,10 @@ defmodule AccessCampusWeb.Router do
   end
 
   pipeline :api do
+    plug CORSPlug, origin: "*"
     plug :accepts, ["json"]
+    plug :fetch_session
+    plug :fetch_flash
   end
 
   scope "/", AccessCampusWeb do
@@ -20,7 +24,10 @@ defmodule AccessCampusWeb.Router do
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", AccessCampusWeb do
-  #   pipe_through :api
-  # end
+  scope "/api", AccessCampusWeb do
+    pipe_through :api
+
+    get "/buildings", BuildingController, :index
+    get "/buildings/:id", BuildingController, :show
+  end
 end

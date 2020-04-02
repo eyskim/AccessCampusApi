@@ -21,8 +21,14 @@ defmodule AccessCampusWeb.BuildingController do
   end
 
   def show(conn, %{"id" => id}) do
-    building = Locations.get_building!(id)
-    render(conn, "show.json", building: building)
+    building = Locations.get_building(id)
+    if building do
+      render(conn, "show.json", building: building)
+    else
+      conn
+      |> put_status(:not_found)
+      |> render("show.json", building: building)
+    end
   end
 
   def update(conn, %{"id" => id, "building" => building_params}) do
