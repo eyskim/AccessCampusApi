@@ -27,9 +27,9 @@ defmodule AccessCampusWeb.Router do
 
   # Other scopes may use custom stacks.
   scope "/api", AccessCampusWeb do
-    pipe_through :api
+    pipe_through(:api)
 
-    get "/", BuildingController, :index
-    get "/:id", BuildingController, :show
-  # end
+    get("/", BuildingController, :index)
+    get("/:id", BuildingController, :show)
+  end
 end
