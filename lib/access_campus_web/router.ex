@@ -18,18 +18,18 @@ defmodule AccessCampusWeb.Router do
   end
 
   scope "/", AccessCampusWeb do
-    pipe_through(:api)
+    pipe_through(:browser)
 
-    # get "/", PageController, :index
-    get("/", BuildingController, :index)
-    get("/:id", BuildingController, :show)
+    get("/", PageController, :index)
+    # get("/", BuildingController, :index)
+    # get("/:id", BuildingController, :show)
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", AccessCampusWeb do
-  #   pipe_through :api
+  scope "/api", AccessCampusWeb do
+    pipe_through :api
 
-  #   get "/buildings", BuildingController, :index
-  #   get "/buildings/:id", BuildingController, :show
+    get "/", BuildingController, :index
+    get "/:id", BuildingController, :show
   # end
 end
