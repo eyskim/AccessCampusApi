@@ -1,16 +1,16 @@
-defmodule AccessCampusWeb.Endpoint do
-  use Phoenix.Endpoint, otp_app: :access_campus
+defmodule AcccessCampusApiWeb.Endpoint do
+  use Phoenix.Endpoint, otp_app: :acccess_campus_api
 
   # The session will be stored in the cookie and signed,
   # this means its contents can be read but not tampered with.
   # Set :encryption_salt if you would also like to encrypt it.
   @session_options [
     store: :cookie,
-    key: "_access_campus_key",
-    signing_salt: "T/2o2LpZ"
+    key: "_acccess_campus_api_key",
+    signing_salt: "KH66ndf+"
   ]
 
-  socket "/socket", AccessCampusWeb.UserSocket,
+  socket "/socket", AcccessCampusApiWeb.UserSocket,
     websocket: true,
     longpoll: false
 
@@ -20,15 +20,13 @@ defmodule AccessCampusWeb.Endpoint do
   # when deploying your static files in production.
   plug Plug.Static,
     at: "/",
-    from: :access_campus,
+    from: :acccess_campus_api,
     gzip: false,
     only: ~w(css fonts images js favicon.ico robots.txt)
 
   # Code reloading can be explicitly enabled under the
   # :code_reloader configuration of your endpoint.
   if code_reloading? do
-    socket "/phoenix/live_reload/socket", Phoenix.LiveReloader.Socket
-    plug Phoenix.LiveReloader
     plug Phoenix.CodeReloader
   end
 
@@ -43,5 +41,5 @@ defmodule AccessCampusWeb.Endpoint do
   plug Plug.MethodOverride
   plug Plug.Head
   plug Plug.Session, @session_options
-  plug AccessCampusWeb.Router
+  plug AcccessCampusApiWeb.Router
 end

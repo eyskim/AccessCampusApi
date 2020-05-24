@@ -7,16 +7,17 @@
 # General application configuration
 use Mix.Config
 
-config :access_campus,
-  ecto_repos: [AccessCampus.Repo]
+config :acccess_campus_api,
+  ecto_repos: [AcccessCampusApi.Repo],
+  generators: [binary_id: true]
 
 # Configures the endpoint
-config :access_campus, AccessCampusWeb.Endpoint,
+config :acccess_campus_api, AcccessCampusApiWeb.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: "1wSG6B/U1mCZcU687UoMmH+2XFF71hLsg/zfzbUpbngtej96TA4uT/sHo2uqacCq",
-  render_errors: [view: AccessCampusWeb.ErrorView, accepts: ~w(html json)],
-  pubsub: [name: AccessCampus.PubSub, adapter: Phoenix.PubSub.PG2],
-  live_view: [signing_salt: "YoOFd+/a"]
+  secret_key_base: "EvCkjAGJ0H8iUgYzHCP1g9C0+cedqtAuFby4xxdpbnzcSg3/+rp1uIzDwE81IjEf",
+  render_errors: [view: AcccessCampusApiWeb.ErrorView, accepts: ~w(json)],
+  pubsub: [name: AcccessCampusApi.PubSub, adapter: Phoenix.PubSub.PG2],
+  live_view: [signing_salt: "qDMWlFMv"]
 
 # Configures Elixir's Logger
 config :logger, :console,

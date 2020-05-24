@@ -1,4 +1,4 @@
-defmodule AccessCampusWeb.ChannelCase do
+defmodule AcccessCampusApiWeb.ChannelCase do
   @moduledoc """
   This module defines the test case to be used by
   channel tests.
@@ -11,7 +11,7 @@ defmodule AccessCampusWeb.ChannelCase do
   we enable the SQL sandbox, so changes done to the database
   are reverted at the end of every test. If you are using
   PostgreSQL, you can even run database tests asynchronously
-  by setting `use AccessCampusWeb.ChannelCase, async: true`, although
+  by setting `use AcccessCampusApiWeb.ChannelCase, async: true`, although
   this option is not recommended for other databases.
   """
 
@@ -23,15 +23,15 @@ defmodule AccessCampusWeb.ChannelCase do
       use Phoenix.ChannelTest
 
       # The default endpoint for testing
-      @endpoint AccessCampusWeb.Endpoint
+      @endpoint AcccessCampusApiWeb.Endpoint
     end
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(AccessCampus.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(AcccessCampusApi.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(AccessCampus.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(AcccessCampusApi.Repo, {:shared, self()})
     end
 
     :ok

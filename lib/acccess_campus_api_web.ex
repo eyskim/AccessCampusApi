@@ -1,12 +1,12 @@
-defmodule AccessCampusWeb do
+defmodule AcccessCampusApiWeb do
   @moduledoc """
   The entrypoint for defining your web interface, such
   as controllers, views, channels and so on.
 
   This can be used in your application as:
 
-      use AccessCampusWeb, :controller
-      use AccessCampusWeb, :view
+      use AcccessCampusApiWeb, :controller
+      use AcccessCampusApiWeb, :view
 
   The definitions below will be executed for every view,
   controller, etc, so keep them short and clean, focused
@@ -19,29 +19,26 @@ defmodule AccessCampusWeb do
 
   def controller do
     quote do
-      use Phoenix.Controller, namespace: AccessCampusWeb
+      use Phoenix.Controller, namespace: AcccessCampusApiWeb
 
       import Plug.Conn
-      import AccessCampusWeb.Gettext
-      alias AccessCampusWeb.Router.Helpers, as: Routes
+      import AcccessCampusApiWeb.Gettext
+      alias AcccessCampusApiWeb.Router.Helpers, as: Routes
     end
   end
 
   def view do
     quote do
       use Phoenix.View,
-        root: "lib/access_campus_web/templates",
-        namespace: AccessCampusWeb
+        root: "lib/acccess_campus_api_web/templates",
+        namespace: AcccessCampusApiWeb
 
       # Import convenience functions from controllers
       import Phoenix.Controller, only: [get_flash: 1, get_flash: 2, view_module: 1]
 
-      # Use all HTML functionality (forms, tags, etc)
-      use Phoenix.HTML
-
-      import AccessCampusWeb.ErrorHelpers
-      import AccessCampusWeb.Gettext
-      alias AccessCampusWeb.Router.Helpers, as: Routes
+      import AcccessCampusApiWeb.ErrorHelpers
+      import AcccessCampusApiWeb.Gettext
+      alias AcccessCampusApiWeb.Router.Helpers, as: Routes
     end
   end
 
@@ -56,7 +53,7 @@ defmodule AccessCampusWeb do
   def channel do
     quote do
       use Phoenix.Channel
-      import AccessCampusWeb.Gettext
+      import AcccessCampusApiWeb.Gettext
     end
   end
 
