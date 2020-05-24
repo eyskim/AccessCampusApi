@@ -33,4 +33,12 @@ defmodule AccessCampusApiWeb.CampusController do
       render(conn, "show.json", campus: campus)
     end
   end
+
+  def delete(conn, %{"id" => id}) do
+    campus = Access.get_campus!(id)
+
+    with {:ok, %Campus{}} <- Access.delete_campus(campus) do
+      send_resp(conn, :no_content, "")
+    end
+  end
 end
