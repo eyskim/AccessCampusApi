@@ -13,10 +13,10 @@ config :access_campus,
 # Configures the endpoint
 config :access_campus, AccessCampusWeb.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: "e7ZTuS6I2nKafO85gTD3aJ3NI6YjWCBlBoEOhmjWm2G4/H1mulw5wHIAUohuyR0M",
+  secret_key_base: "1wSG6B/U1mCZcU687UoMmH+2XFF71hLsg/zfzbUpbngtej96TA4uT/sHo2uqacCq",
   render_errors: [view: AccessCampusWeb.ErrorView, accepts: ~w(html json)],
   pubsub: [name: AccessCampus.PubSub, adapter: Phoenix.PubSub.PG2],
-  live_view: [signing_salt: "Vox8pHfg"]
+  live_view: [signing_salt: "YoOFd+/a"]
 
 # Configures Elixir's Logger
 config :logger, :console,

@@ -7,7 +7,7 @@ defmodule AccessCampusWeb.Endpoint do
   @session_options [
     store: :cookie,
     key: "_access_campus_key",
-    signing_salt: "KhV/KWon"
+    signing_salt: "T/2o2LpZ"
   ]
 
   socket "/socket", AccessCampusWeb.UserSocket,
