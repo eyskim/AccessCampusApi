@@ -4,9 +4,9 @@ defmodule AcccessCampusApi.Repo.Migrations.CreateCampuses do
   def change do
     create table(:campuses, primary_key: false) do
       add :id, :binary_id, primary_key: true
-      add :name, :string
-      add :theme_color, :string
-      add :coords, :map
+      add :name, :string, null: false
+      add :theme_color, :string, default: "#000000"
+      add :coords, :map, null: false
 
       timestamps()
     end
