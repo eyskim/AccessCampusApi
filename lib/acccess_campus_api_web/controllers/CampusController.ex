@@ -11,4 +11,13 @@ defmodule AccessCampusApiWeb.CampusController do
     campuses = Access.list_campuses()
     render(conn, "index.json", campuses: campuses)
   end
+
+  def create(conn, %{"campus" => campus_params}) do
+    with {:ok, %Campus{} = campus} <- Access.create_campus(campus_params) do
+      conn
+      |> put_status(:created)
+      |> put_resp_header("location", Routes.campus_path(conn, :show, campus))
+      |> render("show.json", campus: campus)
+    end
+  end
 end

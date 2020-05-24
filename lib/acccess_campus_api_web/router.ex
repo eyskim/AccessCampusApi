@@ -7,5 +7,7 @@ defmodule AcccessCampusApiWeb.Router do
 
   scope "/api", AcccessCampusApiWeb do
     pipe_through :api
+
+    resources "/campuses", CampusController
   end
 end
