@@ -20,4 +20,9 @@ defmodule AccessCampusApiWeb.CampusController do
       |> render("show.json", campus: campus)
     end
   end
+
+  def show(conn, %{"id" => id}) do
+    campus = Access.get_campus!(id)
+    render(conn, "show.json", campus: campus)
+  end
 end
