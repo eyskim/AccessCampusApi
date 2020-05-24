@@ -17,7 +17,7 @@ config :acccess_campus_api, AcccessCampusApi.Repo,
 # with webpack to recompile .js and .css sources.
 config :acccess_campus_api, AcccessCampusApiWeb.Endpoint,
   http: [port: 4000],
-  debug_errors: true,
+  debug_errors: false,
   code_reloader: true,
   check_origin: false,
   watchers: []
