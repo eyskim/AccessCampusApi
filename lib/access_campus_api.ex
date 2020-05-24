@@ -1,6 +1,6 @@
-defmodule AcccessCampusApi do
+defmodule AccessCampusApi do
   @moduledoc """
-  AcccessCampusApi keeps the contexts that define your domain
+  AccessCampusApi keeps the contexts that define your domain
   and business logic.
 
   Contexts are also responsible for managing your data, regardless

@@ -1,11 +1,11 @@
-defmodule AcccessCampusApiWeb.Router do
-  use AcccessCampusApiWeb, :router
+defmodule AccessCampusApiWeb.Router do
+  use AccessCampusApiWeb, :router
 
   pipeline :api do
     plug :accepts, ["json"]
   end
 
-  scope "/api", AcccessCampusApiWeb do
+  scope "/api", AccessCampusApiWeb do
     pipe_through :api
 
     resources "/campuses", CampusController

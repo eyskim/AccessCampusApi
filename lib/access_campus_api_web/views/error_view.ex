@@ -1,5 +1,5 @@
-defmodule AcccessCampusApiWeb.ErrorView do
-  use AcccessCampusApiWeb, :view
+defmodule AccessCampusApiWeb.ErrorView do
+  use AccessCampusApiWeb, :view
 
   # If you want to customize a particular status code
   # for a certain format, you may uncomment below.

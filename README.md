@@ -1,4 +1,4 @@
-# AcccessCampusApi
+# AccessCampusApi
 
 To start your Phoenix server:
 

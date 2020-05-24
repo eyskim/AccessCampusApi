@@ -1,10 +1,10 @@
 use Mix.Config
 
 # Configure your database
-config :acccess_campus_api, AcccessCampusApi.Repo,
+config :access_campus_api, AccessCampusApi.Repo,
   username: "postgres",
   password: "postgres",
-  database: "acccess_campus_api_dev",
+  database: "access_campus_api_dev",
   hostname: "localhost",
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
@@ -15,7 +15,7 @@ config :acccess_campus_api, AcccessCampusApi.Repo,
 # The watchers configuration can be used to run external
 # watchers to your application. For example, we use it
 # with webpack to recompile .js and .css sources.
-config :acccess_campus_api, AcccessCampusApiWeb.Endpoint,
+config :access_campus_api, AccessCampusApiWeb.Endpoint,
   http: [port: 4000],
   debug_errors: false,
   code_reloader: true,

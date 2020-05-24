@@ -1,4 +1,4 @@
-defmodule AcccessCampusApi.Repo.Migrations.CreateCampuses do
+defmodule AccessCampusApi.Repo.Migrations.CreateCampuses do
   use Ecto.Migration
 
   def change do

@@ -1,4 +1,4 @@
-defmodule AcccessCampusApi.Access_Entrances.Campus do
+defmodule AccessCampusApi.Access_Entrances.Campus do
   use Ecto.Schema
   import Ecto.Changeset
 

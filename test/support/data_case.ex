@@ -1,4 +1,4 @@
-defmodule AcccessCampusApi.DataCase do
+defmodule AccessCampusApi.DataCase do
   @moduledoc """
   This module defines the setup for tests requiring
   access to the application's data layer.
@@ -10,7 +10,7 @@ defmodule AcccessCampusApi.DataCase do
   we enable the SQL sandbox, so changes done to the database
   are reverted at the end of every test. If you are using
   PostgreSQL, you can even run database tests asynchronously
-  by setting `use AcccessCampusApi.DataCase, async: true`, although
+  by setting `use AccessCampusApi.DataCase, async: true`, although
   this option is not recommended for other databases.
   """
 
@@ -18,20 +18,20 @@ defmodule AcccessCampusApi.DataCase do
 
   using do
     quote do
-      alias AcccessCampusApi.Repo
+      alias AccessCampusApi.Repo
 
       import Ecto
       import Ecto.Changeset
       import Ecto.Query
-      import AcccessCampusApi.DataCase
+      import AccessCampusApi.DataCase
     end
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(AcccessCampusApi.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(AccessCampusApi.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(AcccessCampusApi.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(AccessCampusApi.Repo, {:shared, self()})
     end
 
     :ok

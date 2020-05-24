@@ -1,11 +1,11 @@
 defmodule AccessCampusApiWeb.CampusController do
-  use AcccessCampusApiWeb, :controller
+  use AccessCampusApiWeb, :controller
 
-  alias AcccessCampusApi.Access_Entrances, as: Access
-  alias AcccessCampusApi.Access_Entrances.Campus
+  alias AccessCampusApi.Access_Entrances, as: Access
+  alias AccessCampusApi.Access_Entrances.Campus
 
   # TODO:
-  # action_fallback AcccessCampusApiWeb.FallbackController
+  # action_fallback AccessCampusApiWeb.FallbackController
 
   def index(conn, _params) do
     campuses = Access.list_campuses()

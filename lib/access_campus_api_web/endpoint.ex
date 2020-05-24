@@ -1,16 +1,16 @@
-defmodule AcccessCampusApiWeb.Endpoint do
-  use Phoenix.Endpoint, otp_app: :acccess_campus_api
+defmodule AccessCampusApiWeb.Endpoint do
+  use Phoenix.Endpoint, otp_app: :access_campus_api
 
   # The session will be stored in the cookie and signed,
   # this means its contents can be read but not tampered with.
   # Set :encryption_salt if you would also like to encrypt it.
   @session_options [
     store: :cookie,
-    key: "_acccess_campus_api_key",
+    key: "_access_campus_api_key",
     signing_salt: "KH66ndf+"
   ]
 
-  socket "/socket", AcccessCampusApiWeb.UserSocket,
+  socket "/socket", AccessCampusApiWeb.UserSocket,
     websocket: true,
     longpoll: false
 
@@ -20,7 +20,7 @@ defmodule AcccessCampusApiWeb.Endpoint do
   # when deploying your static files in production.
   plug Plug.Static,
     at: "/",
-    from: :acccess_campus_api,
+    from: :access_campus_api,
     gzip: false,
     only: ~w(css fonts images js favicon.ico robots.txt)
 
@@ -41,5 +41,5 @@ defmodule AcccessCampusApiWeb.Endpoint do
   plug Plug.MethodOverride
   plug Plug.Head
   plug Plug.Session, @session_options
-  plug AcccessCampusApiWeb.Router
+  plug AccessCampusApiWeb.Router
 end

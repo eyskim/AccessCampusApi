@@ -1,12 +1,12 @@
-defmodule AcccessCampusApi.Access_Entrances do
+defmodule AccessCampusApi.Access_Entrances do
   @moduledoc """
   The Access_Entrances context.
   """
 
   import Ecto.Query, warn: false
-  alias AcccessCampusApi.Repo
+  alias AccessCampusApi.Repo
 
-  alias AcccessCampusApi.Access_Entrances.Campus
+  alias AccessCampusApi.Access_Entrances.Campus
 
   @doc """
   Returns the list of campuses.

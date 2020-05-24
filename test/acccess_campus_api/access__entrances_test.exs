@@ -1,13 +1,17 @@
-defmodule AcccessCampusApi.Access_EntrancesTest do
-  use AcccessCampusApi.DataCase
+defmodule AccessCampusApi.Access_EntrancesTest do
+  use AccessCampusApi.DataCase
 
-  alias AcccessCampusApi.Access_Entrances
+  alias AccessCampusApi.Access_Entrances
 
   describe "campuses" do
-    alias AcccessCampusApi.Access_Entrances.Campus
+    alias AccessCampusApi.Access_Entrances.Campus
 
     @valid_attrs %{coords: %{}, name: "some name", theme_color: "some theme_color"}
-    @update_attrs %{coords: %{}, name: "some updated name", theme_color: "some updated theme_color"}
+    @update_attrs %{
+      coords: %{},
+      name: "some updated name",
+      theme_color: "some updated theme_color"
+    }
     @invalid_attrs %{coords: nil, name: nil, theme_color: nil}
 
     def campus_fixture(attrs \\ %{}) do
