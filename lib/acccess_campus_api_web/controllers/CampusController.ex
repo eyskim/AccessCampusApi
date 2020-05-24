@@ -25,4 +25,12 @@ defmodule AccessCampusApiWeb.CampusController do
     campus = Access.get_campus!(id)
     render(conn, "show.json", campus: campus)
   end
+
+  def update(conn, %{"id" => id, "campus" => campus_params}) do
+    campus = Access.get_campus!(id)
+
+    with {:ok, %Campus{} = campus} <- Access.update_campus(campus, campus_params) do
+      render(conn, "show.json", campus: campus)
+    end
+  end
 end
