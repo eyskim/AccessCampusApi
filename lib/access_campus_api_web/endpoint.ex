@@ -7,7 +7,7 @@ defmodule AccessCampusApiWeb.Endpoint do
   @session_options [
     store: :cookie,
     key: "_access_campus_api_key",
-    signing_salt: "KH66ndf+"
+    signing_salt: "BcMxw0pz"
   ]
 
   socket "/socket", AccessCampusApiWeb.UserSocket,
@@ -27,6 +27,8 @@ defmodule AccessCampusApiWeb.Endpoint do
   # Code reloading can be explicitly enabled under the
   # :code_reloader configuration of your endpoint.
   if code_reloading? do
+    socket "/phoenix/live_reload/socket", Phoenix.LiveReloader.Socket
+    plug Phoenix.LiveReloader
     plug Phoenix.CodeReloader
   end
 

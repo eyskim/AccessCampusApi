@@ -8,16 +8,15 @@
 use Mix.Config
 
 config :access_campus_api,
-  ecto_repos: [AccessCampusApi.Repo],
-  generators: [binary_id: true]
+  ecto_repos: [AccessCampusApi.Repo]
 
 # Configures the endpoint
 config :access_campus_api, AccessCampusApiWeb.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: "EvCkjAGJ0H8iUgYzHCP1g9C0+cedqtAuFby4xxdpbnzcSg3/+rp1uIzDwE81IjEf",
-  render_errors: [view: AccessCampusApiWeb.ErrorView, accepts: ~w(json)],
+  secret_key_base: "TVSIh5gO8FxVKgWHn3A30A2WCYKLy69pTHRPcN6pr6d2l2FkpsQLmj9BM2evKy/X",
+  render_errors: [view: AccessCampusApiWeb.ErrorView, accepts: ~w(html json)],
   pubsub: [name: AccessCampusApi.PubSub, adapter: Phoenix.PubSub.PG2],
-  live_view: [signing_salt: "qDMWlFMv"]
+  live_view: [signing_salt: "i1oJunwf"]
 
 # Configures Elixir's Logger
 config :logger, :console,
