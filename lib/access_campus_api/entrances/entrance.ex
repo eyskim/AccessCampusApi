@@ -4,7 +4,7 @@ defmodule AccessCampusApi.Entrances.Entrance do
   alias AccessCampusApi.Entrances
 
   schema "entrances" do
-    field :coords, {:array, :map}
+    field :coords, :map
     field :building_name, :string
     belongs_to :building, Entrances.Building
 

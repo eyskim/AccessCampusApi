@@ -3,7 +3,7 @@ defmodule AccessCampusApi.Repo.Migrations.CreateEntrances do
 
   def change do
     create table(:entrances) do
-      add :coords, {:array, :map}
+      add :coords, :map
       add :building_id, references(:buildings)
 
       timestamps()
