@@ -12,6 +12,8 @@ defmodule AccessCampusApiWeb.EntranceView do
 
   def render("entrance.json", %{entrance: entrance}) do
     %{id: entrance.id,
-      coords: entrance.coords}
+      coords: entrance.coords,
+      building_id: entrance.building_id,
+      building_name: entrance.building_name}
   end
 end

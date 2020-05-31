@@ -5,6 +5,7 @@ defmodule AccessCampusApi.Entrances.Entrance do
 
   schema "entrances" do
     field :coords, {:array, :map}
+    field :building_name, :string
     belongs_to :building, Entrances.Building
 
     timestamps()

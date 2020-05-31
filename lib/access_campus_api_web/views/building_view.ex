@@ -13,6 +13,8 @@ defmodule AccessCampusApiWeb.BuildingView do
   def render("building.json", %{building: building}) do
     %{id: building.id,
       name: building.name,
-      coords: building.coords}
+      coords: building.coords,
+      campus_id: building.campus_id,
+      campus_name: building.campus_name}
   end
 end

@@ -6,6 +6,7 @@ defmodule AccessCampusApi.Entrances.Building do
   schema "buildings" do
     field :coords, :map
     field :name, :string
+    field :campus_name, :string
     belongs_to :campus, Entrances.Campus
     has_many :entrances, Entrances.Entrance
 
