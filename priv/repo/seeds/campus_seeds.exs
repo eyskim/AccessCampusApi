@@ -14,3 +14,17 @@ Repo.insert! %Campus{
     acronym: "sfu",
     theme_color: "#CD3D3D"
 }
+
+Repo.insert! %Campus{
+    coords: %{lat: 42.3770029, lng: -71.1188488},
+    name: "Harvard University",
+    acronym: "harvard",
+    theme_color: "#A41034"
+}
+
+Repo.insert! %Campus{
+    coords: %{lat: 37.4220041, lng: -122.0862462},
+    name: "Googleplex",
+    acronym: "googleplex",
+    theme_color: "#3DDC84"
+}
