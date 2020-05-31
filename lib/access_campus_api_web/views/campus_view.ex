@@ -14,6 +14,7 @@ defmodule AccessCampusApiWeb.CampusView do
     %{id: campus.id,
       name: campus.name,
       theme_color: campus.theme_color,
-      coords: campus.coords}
+      coords: campus.coords,
+      acronym: campus.acronym}
   end
 end
