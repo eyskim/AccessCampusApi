@@ -8,7 +8,7 @@ defmodule AccessCampusApiWeb.BuildingController do
 
   def index(conn, _params) do
     buildings = Entrances.list_buildings()
-    render(conn, "index.json", buildings: buildings)
+    render(conn, "index.json", data: buildings)
   end
 
   def create(conn, %{"building" => building_params}) do
@@ -16,20 +16,20 @@ defmodule AccessCampusApiWeb.BuildingController do
       conn
       |> put_status(:created)
       |> put_resp_header("location", Routes.building_path(conn, :show, building))
-      |> render("show.json", building: building)
+      |> render("show.json", data: building)
     end
   end
 
   def show(conn, %{"id" => id}) do
     building = Entrances.get_building!(id)
-    render(conn, "show.json", building: building)
+    render(conn, "show.json", data: building)
   end
 
   def update(conn, %{"id" => id, "building" => building_params}) do
     building = Entrances.get_building!(id)
 
     with {:ok, %Building{} = building} <- Entrances.update_building(building, building_params) do
-      render(conn, "show.json", building: building)
+      render(conn, "show.json", data: building)
     end
   end
 

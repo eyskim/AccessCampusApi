@@ -8,7 +8,7 @@ defmodule AccessCampusApiWeb.CampusController do
 
   def index(conn, _params) do
     campuses = Entrances.list_campuses()
-    render(conn, "index.json", campuses: campuses)
+    render(conn, "index.json", data: campuses)
   end
 
   def create(conn, %{"campus" => campus_params}) do
@@ -16,20 +16,20 @@ defmodule AccessCampusApiWeb.CampusController do
       conn
       |> put_status(:created)
       |> put_resp_header("location", Routes.campus_path(conn, :show, campus))
-      |> render("show.json", campus: campus)
+      |> render("show.json", data: campus)
     end
   end
 
   def show(conn, %{"id" => id}) do
     campus = Entrances.get_campus!(id)
-    render(conn, "show.json", campus: campus)
+    render(conn, "show.json", data: campus)
   end
 
   def update(conn, %{"id" => id, "campus" => campus_params}) do
     campus = Entrances.get_campus!(id)
 
     with {:ok, %Campus{} = campus} <- Entrances.update_campus(campus, campus_params) do
-      render(conn, "show.json", campus: campus)
+      render(conn, "show.json", data: campus)
     end
   end
 

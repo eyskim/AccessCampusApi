@@ -1,20 +1,24 @@
 defmodule AccessCampusApiWeb.CampusView do
   use AccessCampusApiWeb, :view
-  alias AccessCampusApiWeb.CampusView
+  use JaSerializer.PhoenixView
 
-  def render("index.json", %{campuses: campuses}) do
-    %{data: render_many(campuses, CampusView, "campus.json")}
-  end
+  attributes [:name, :theme_color, :coords, :acronym]
 
-  def render("show.json", %{campus: campus}) do
-    %{data: render_one(campus, CampusView, "campus.json")}
-  end
+  # alias AccessCampusApiWeb.CampusView
 
-  def render("campus.json", %{campus: campus}) do
-    %{id: campus.id,
-      name: campus.name,
-      theme_color: campus.theme_color,
-      coords: campus.coords,
-      acronym: campus.acronym}
-  end
+  # def render("index.json", %{campuses: campuses}) do
+  #   %{data: render_many(campuses, CampusView, "campus.json")}
+  # end
+
+  # def render("show.json", %{campus: campus}) do
+  #   %{data: render_one(campus, CampusView, "campus.json")}
+  # end
+
+  # def render("campus.json", %{campus: campus}) do
+  #   %{id: campus.id,
+  #     name: campus.name,
+  #     theme_color: campus.theme_color,
+  #     coords: campus.coords,
+  #     acronym: campus.acronym}
+  # end
 end
