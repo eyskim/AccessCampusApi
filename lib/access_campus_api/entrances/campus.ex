@@ -7,6 +7,7 @@ defmodule AccessCampusApi.Entrances.Campus do
     field :coords, :map
     field :name, :string
     field :theme_color, :string
+    field :acronym, :string
     has_many :buildings, Entrances.Building
 
     timestamps()
@@ -15,7 +16,7 @@ defmodule AccessCampusApi.Entrances.Campus do
   @doc false
   def changeset(campus, attrs) do
     campus
-    |> cast(attrs, [:name, :theme_color, :coords])
-    |> validate_required([:name, :theme_color, :coords])
+    |> cast(attrs, [:name, :acronym, :theme_color, :coords])
+    |> validate_required([:name, :acronym, :theme_color, :coords])
   end
 end

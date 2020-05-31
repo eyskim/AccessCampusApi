@@ -20,7 +20,9 @@ defmodule AccessCampusApiWeb.Router do
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", AccessCampusApiWeb do
-  #   pipe_through :api
-  # end
+  scope "/api", AccessCampusApiWeb do
+    pipe_through :api
+
+    resources "/campus", CampusController
+  end
 end
