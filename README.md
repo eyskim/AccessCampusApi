@@ -1,4 +1,8 @@
-# AccessCampusApi
+# Access Campus API
+
+Data structure (PostgreSQL database)
+
+![Database](/assets/statc/images/database.PNG)
 
 Todo:
 - add authorization
