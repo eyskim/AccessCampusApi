@@ -2,7 +2,7 @@
 
 Data structure (PostgreSQL database)
 
-![Database](/assets/statc/images/database.PNG)
+![Database](/assets/static/images/database.PNG)
 
 Todo:
 - add authorization
