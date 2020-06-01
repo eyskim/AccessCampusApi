@@ -2,7 +2,11 @@
 
 Data structure (PostgreSQL database)
 
-![Database](/assets/statc/images/database.PNG)
+![Database](/assets/static/images/database.PNG)
+
+API Serialized using [JaSerializer](https://github.com/vt-elixir/ja_serializer)
+
+![API_Example](/assets/static/images/api.PNG)
 
 Todo:
 - add authorization
