@@ -7,7 +7,7 @@ defmodule AccessCampusApiWeb.BuildingView do
   has_one :campuses,
     serializer: AccessCampusApiWeb.CampusView,
     field: :campus_name
-  
+    
   has_many :entrances,
     serializer: AccessCampusApiWeb.EntranceView
 
