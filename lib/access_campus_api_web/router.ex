@@ -30,10 +30,9 @@ defmodule AccessCampusApiWeb.Router do
   scope "/api", AccessCampusApiWeb do
     pipe_through :api
 
-    resources "/campuses", CampusController do
-      resources "/buildings", BuildingController do
-        resources "/entrances", EntranceController
-      end
+    resources "/campuses", CampusController
+    resources "/buildings", BuildingController do
+      resources "/entrances", EntranceController
     end
   end
 end

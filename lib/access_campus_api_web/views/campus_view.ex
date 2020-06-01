@@ -2,10 +2,7 @@ defmodule AccessCampusApiWeb.CampusView do
   use AccessCampusApiWeb, :view
   use JaSerializer.PhoenixView
 
-  attributes [:name, :theme_color, :coords, :acronym, :buildings]
-
-  has_many :buildings,
-    serializer: AccessCampusApiWeb.BuildingView
+  attributes [:name, :theme_color, :coords, :acronym]
   
   # alias AccessCampusApiWeb.CampusView
 

@@ -8,10 +8,8 @@ defmodule AccessCampusApiWeb.CampusController do
   action_fallback AccessCampusApiWeb.FallbackController
 
   def index(conn, _params) do
-    campuses = Entrances.list_campuses() 
-    |> Repo.preload([:buildings])
-
-    render(conn, "index.json-api", data: campuses, opts: [include: "buildings"])
+    campuses = Entrances.list_campuses()
+    render(conn, "index.json-api", data: campuses)
   end
 
   def create(conn, %{"campus" => campus_params}) do
@@ -25,9 +23,7 @@ defmodule AccessCampusApiWeb.CampusController do
 
   def show(conn, %{"id" => id}) do
     campus = Entrances.get_campus!(id) 
-    |> Repo.preload([:buildings])
-    
-    render(conn, "show.json-api", data: campus, opts: [include: "buildings"])
+    render(conn, "show.json-api", data: campus)
   end
 
   def update(conn, %{"id" => id, "campus" => campus_params}) do
