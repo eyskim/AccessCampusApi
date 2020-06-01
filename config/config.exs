@@ -7,16 +7,16 @@
 # General application configuration
 use Mix.Config
 
-config :access_campus,
-  ecto_repos: [AccessCampus.Repo]
+config :access_campus_api,
+  ecto_repos: [AccessCampusApi.Repo]
 
 # Configures the endpoint
-config :access_campus, AccessCampusWeb.Endpoint,
+config :access_campus_api, AccessCampusApiWeb.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: "e7ZTuS6I2nKafO85gTD3aJ3NI6YjWCBlBoEOhmjWm2G4/H1mulw5wHIAUohuyR0M",
-  render_errors: [view: AccessCampusWeb.ErrorView, accepts: ~w(html json)],
-  pubsub: [name: AccessCampus.PubSub, adapter: Phoenix.PubSub.PG2],
-  live_view: [signing_salt: "Vox8pHfg"]
+  secret_key_base: "TVSIh5gO8FxVKgWHn3A30A2WCYKLy69pTHRPcN6pr6d2l2FkpsQLmj9BM2evKy/X",
+  render_errors: [view: AccessCampusApiWeb.ErrorView, accepts: ~w(html json)],
+  pubsub: [name: AccessCampusApi.PubSub, adapter: Phoenix.PubSub.PG2],
+  live_view: [signing_salt: "i1oJunwf"]
 
 # Configures Elixir's Logger
 config :logger, :console,
@@ -25,6 +25,13 @@ config :logger, :console,
 
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
+
+config :phoenix, :format_encoders,
+  "json-api": Poison
+
+config :mime, :types, %{
+  "application/vnd.api+json" => ["json-api"]
+}
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.

@@ -1,9 +1,9 @@
-defmodule AccessCampus.MixProject do
+defmodule AccessCampusApi.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :access_campus,
+      app: :access_campus_api,
       version: "0.1.0",
       elixir: "~> 1.5",
       elixirc_paths: elixirc_paths(Mix.env()),
@@ -19,7 +19,7 @@ defmodule AccessCampus.MixProject do
   # Type `mix help compile.app` for more information.
   def application do
     [
-      mod: {AccessCampus.Application, []},
+      mod: {AccessCampusApi.Application, []},
       extra_applications: [:logger, :runtime_tools]
     ]
   end
@@ -43,7 +43,8 @@ defmodule AccessCampus.MixProject do
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
-      {:cors_plug, "~> 1.5"}
+      {:poison, "~> 3.1"},
+      {:ja_serializer, github: "vt-elixir/ja_serializer"}
     ]
   end
 

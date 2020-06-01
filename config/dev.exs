@@ -1,15 +1,13 @@
 use Mix.Config
 
 # Configure your database
-config :access_campus, AccessCampus.Repo,
-  adapter: Ecto.Adapters.Postgres,
-  username: "mnvffqhdkfyoah",
-  password: "94f1b4945df2b5ea8d33ed8b5fb97ef65521fc0365a9b4d9d7981290e28e01f5",
-  database: "dccpr8t3um51nt",
-  hostname: "ec2-54-152-175-141.compute-1.amazonaws.com",
+config :access_campus_api, AccessCampusApi.Repo,
+  username: "postgres",
+  password: "postgres",
+  database: "access_campus_api_dev",
+  hostname: "localhost",
   show_sensitive_data_on_connection_error: true,
-  pool_size: 10,
-  ssl: true
+  pool_size: 10
 
 # For development, we disable any cache and enable
 # debugging and code reloading.
@@ -17,7 +15,7 @@ config :access_campus, AccessCampus.Repo,
 # The watchers configuration can be used to run external
 # watchers to your application. For example, we use it
 # with webpack to recompile .js and .css sources.
-config :access_campus, AccessCampusWeb.Endpoint,
+config :access_campus_api, AccessCampusApiWeb.Endpoint,
   http: [port: 4000],
   debug_errors: true,
   code_reloader: true,
@@ -57,13 +55,13 @@ config :access_campus, AccessCampusWeb.Endpoint,
 # different ports.
 
 # Watch static and templates for browser reloading.
-config :access_campus, AccessCampusWeb.Endpoint,
+config :access_campus_api, AccessCampusApiWeb.Endpoint,
   live_reload: [
     patterns: [
       ~r"priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$",
       ~r"priv/gettext/.*(po)$",
-      ~r"lib/access_campus_web/(live|views)/.*(ex)$",
-      ~r"lib/access_campus_web/templates/.*(eex)$"
+      ~r"lib/access_campus_api_web/(live|views)/.*(ex)$",
+      ~r"lib/access_campus_api_web/templates/.*(eex)$"
     ]
   ]
 
