@@ -29,4 +29,4 @@ alias AccessCampusApi.Entrances.Building
 #     campus_name: "University of British Columbia"
 # }
 
-Repo.update_all Building, set: [campus_name: "ubc"]
+# Repo.update_all Building, set: [campus_name: "ubc"]
