@@ -2,6 +2,7 @@ defmodule AccessCampusApiWeb.Router do
   use AccessCampusApiWeb, :router
 
   pipeline :browser do
+    plug(CORSPlug, origin: "*")
     plug :accepts, ["html"]
     plug :fetch_session
     plug :fetch_flash
@@ -10,6 +11,7 @@ defmodule AccessCampusApiWeb.Router do
   end
 
   pipeline :api do
+    plug(CORSPlug, origin: "*")
     plug :accepts, ["json-api"]
     plug :fetch_session
     plug JaSerializer.ContentTypeNegotiation

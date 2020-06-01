@@ -44,7 +44,8 @@ defmodule AccessCampusApi.MixProject do
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
       {:poison, "~> 3.1"},
-      {:ja_serializer, github: "vt-elixir/ja_serializer"}
+      {:ja_serializer, github: "vt-elixir/ja_serializer"},
+      {:cors_plug, "~> 1.5"}
     ]
   end
 
