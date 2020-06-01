@@ -1,6 +1,7 @@
 defmodule AccessCampusApiWeb.BuildingController do
   use AccessCampusApiWeb, :controller
 
+  alias AccessCampusApi.Repo
   alias AccessCampusApi.Entrances
   alias AccessCampusApi.Entrances.Building
 
@@ -8,7 +9,9 @@ defmodule AccessCampusApiWeb.BuildingController do
 
   def index(conn, _params) do
     buildings = Entrances.list_buildings()
-    render(conn, "index.json-api", data: buildings)
+    |> Repo.preload([:entrances])
+
+    render(conn, "index.json-api", data: buildings, opts: [include: "entrances"])
   end
 
   def create(conn, %{"building" => building_params}) do
@@ -22,7 +25,9 @@ defmodule AccessCampusApiWeb.BuildingController do
 
   def show(conn, %{"id" => id}) do
     building = Entrances.get_building!(id)
-    render(conn, "show.json-api", data: building)
+    |> Repo.preload([:entrances])
+    
+    render(conn, "show.json-api", data: building, opts: [include: "entrances"])
   end
 
   def update(conn, %{"id" => id, "building" => building_params}) do

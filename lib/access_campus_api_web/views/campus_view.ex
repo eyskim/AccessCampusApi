@@ -2,8 +2,11 @@ defmodule AccessCampusApiWeb.CampusView do
   use AccessCampusApiWeb, :view
   use JaSerializer.PhoenixView
 
-  attributes [:name, :theme_color, :coords, :acronym]
+  attributes [:name, :theme_color, :coords, :acronym, :buildings]
 
+  has_many :buildings,
+    serializer: AccessCampusApiWeb.BuildingView
+  
   # alias AccessCampusApiWeb.CampusView
 
   # def render("index.json", %{campuses: campuses}) do

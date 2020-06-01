@@ -1,14 +1,17 @@
 defmodule AccessCampusApiWeb.CampusController do
   use AccessCampusApiWeb, :controller
 
+  alias AccessCampusApi.Repo
   alias AccessCampusApi.Entrances
   alias AccessCampusApi.Entrances.Campus
 
   action_fallback AccessCampusApiWeb.FallbackController
 
   def index(conn, _params) do
-    campuses = Entrances.list_campuses()
-    render(conn, "index.json-api", data: campuses)
+    campuses = Entrances.list_campuses() 
+    |> Repo.preload([:buildings])
+
+    render(conn, "index.json-api", data: campuses, opts: [include: "buildings"])
   end
 
   def create(conn, %{"campus" => campus_params}) do
@@ -21,8 +24,10 @@ defmodule AccessCampusApiWeb.CampusController do
   end
 
   def show(conn, %{"id" => id}) do
-    campus = Entrances.get_campus!(id)
-    render(conn, "show.json-api", data: campus)
+    campus = Entrances.get_campus!(id) 
+    |> Repo.preload([:buildings])
+    
+    render(conn, "show.json-api", data: campus, opts: [include: "buildings"])
   end
 
   def update(conn, %{"id" => id, "campus" => campus_params}) do

@@ -7,6 +7,8 @@ defmodule AccessCampusApi.Entrances do
   alias AccessCampusApi.Repo
 
   alias AccessCampusApi.Entrances.Campus
+  alias AccessCampusApi.Entrances.Building
+  alias AccessCampusApi.Entrances.Entrance
 
   @doc """
   Returns the list of campuses.
@@ -35,8 +37,10 @@ defmodule AccessCampusApi.Entrances do
       ** (Ecto.NoResultsError)
 
   """
-  def get_campus!(id), do: Repo.get!(Campus, id)
-
+  # def get_campus!(id), do: Repo.get!(Campus, id)
+  def get_campus!(id) do
+     Repo.get!(Campus, id)
+  end 
   @doc """
   Creates a campus.
 
@@ -101,8 +105,6 @@ defmodule AccessCampusApi.Entrances do
   def change_campus(%Campus{} = campus) do
     Campus.changeset(campus, %{})
   end
-
-  alias AccessCampusApi.Entrances.Building
 
   @doc """
   Returns the list of buildings.
@@ -197,8 +199,6 @@ defmodule AccessCampusApi.Entrances do
   def change_building(%Building{} = building) do
     Building.changeset(building, %{})
   end
-
-  alias AccessCampusApi.Entrances.Entrance
 
   @doc """
   Returns the list of entrances.

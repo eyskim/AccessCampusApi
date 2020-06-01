@@ -10,12 +10,14 @@ defmodule AccessCampusApiWeb.Router do
   end
 
   pipeline :api do
-    plug :accepts, ["json"]
+    plug :accepts, ["json-api"]
+    plug :fetch_session
+    plug JaSerializer.ContentTypeNegotiation
+    plug JaSerializer.Deserializer
   end
 
   pipeline :json_api do
-    plug :accepts, ["json-api"]
-    plug JaSerializer.Deserializer
+
   end
 
   scope "/", AccessCampusApiWeb do
@@ -26,7 +28,7 @@ defmodule AccessCampusApiWeb.Router do
 
   # Other scopes may use custom stacks.
   scope "/api", AccessCampusApiWeb do
-    pipe_through :json_api
+    pipe_through :api
 
     resources "/campuses", CampusController do
       resources "/buildings", BuildingController do
