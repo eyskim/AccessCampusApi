@@ -15,7 +15,7 @@ defmodule AccessCampusApiWeb.EntranceController do
     with {:ok, %Entrance{} = entrance} <- Entrances.create_entrance(entrance_params) do
       conn
       |> put_status(:created)
-      |> put_resp_header("location", Routes.entrance_path(conn, :show, entrance))
+      |> put_resp_header("location", Routes.building_entrance_path(conn, :show, entrance))
       |> render("show.json-api", data: entrance)
     end
   end
